@@ -31,6 +31,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -40,7 +41,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.carplay.R
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -54,17 +57,19 @@ fun AutoAudioScreen(
     val masterToggle by preferences.masterToggleFlow.collectAsState(initial = false)
     val audioUriString by preferences.audioUriFlow.collectAsState(initial = null)
 
-    // Resolve the human-readable file name from the URI
-    val fileName = remember(audioUriString) {
-        audioUriString?.let { uriStr ->
-            try {
-                val uri = Uri.parse(uriStr)
-                context.contentResolver.query(uri, null, null, null, null)?.use { cursor ->
-                    val idx = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
-                    if (cursor.moveToFirst() && idx >= 0) cursor.getString(idx) else null
+    // Resolve the human-readable file name from the URI on a background thread
+    val fileName by produceState<String?>(initialValue = null, audioUriString) {
+        value = audioUriString?.let { uriStr ->
+            withContext(Dispatchers.IO) {
+                try {
+                    val uri = Uri.parse(uriStr)
+                    context.contentResolver.query(uri, null, null, null, null)?.use { cursor ->
+                        val idx = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
+                        if (cursor.moveToFirst() && idx >= 0) cursor.getString(idx) else null
+                    }
+                } catch (_: Exception) {
+                    null
                 }
-            } catch (_: Exception) {
-                null
             }
         }
     }

@@ -26,6 +26,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -49,15 +50,17 @@ data class FeatureItem(
 fun DashboardScreen(
     onNavigateToAutoAudio: () -> Unit
 ) {
-    val features = listOf(
-        FeatureItem(
-            title = "Auto-Audio",
-            subtitle = "Play audio on car connect",
-            icon = Icons.Filled.PlayArrow,
-            onClick = onNavigateToAutoAudio
+    val features = remember {
+        listOf(
+            FeatureItem(
+                title = "Auto-Audio",
+                subtitle = "Play audio on car connect",
+                icon = Icons.Filled.PlayArrow,
+                onClick = onNavigateToAutoAudio
+            )
+            // Future features: add new FeatureItem entries here
         )
-        // Future features: add new FeatureItem entries here
-    )
+    }
 
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 

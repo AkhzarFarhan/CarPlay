@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#0F1417</color>
+    <string name="app_name">CarPlay</string>
+    <string name="auto_audio_disabled">Disabled</string>
+    <string name="auto_audio_enabled">Enabled</string>
+    <string name="auto_audio_how_body">When your phone connects to Android Auto, the app waits 3 seconds for the car amplifier to initialize, then plays your selected audio file over the car speakers.</string>
+    <string name="auto_audio_how_title">How it works</string>
+    <string name="auto_audio_no_file">No file selected</string>
+    <string name="auto_audio_select_file">Select Audio File</string>
+    <string name="auto_audio_title">Auto-Audio</string>
+    <string name="auto_audio_toggle_label">Auto-Play</string>
+    <string name="channel_auto_audio">Auto-Audio</string>
+    <string name="channel_auto_audio_desc">Shows when Auto-Audio is actively playing</string>
+    <string name="notification_text">Playing startup audio…</string>
+    <string name="notification_title">Auto-Audio Active</string>
+    <style name="Theme.CarPlay" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>

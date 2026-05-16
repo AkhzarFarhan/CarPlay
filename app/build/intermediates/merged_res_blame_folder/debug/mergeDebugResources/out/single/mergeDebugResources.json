@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.carplay.app-debug-4:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.carplay.app-main-6:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.carplay.app-debug-4:/drawable_ic_notification.xml.flat",
+        "source": "com.carplay.app-main-6:/drawable/ic_notification.xml"
+    }
+]

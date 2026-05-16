@@ -1,0 +1,19 @@
+R_DEF: Internal format may change without notice
+local
+color ic_launcher_background
+drawable ic_notification
+mipmap ic_launcher
+string app_name
+string auto_audio_disabled
+string auto_audio_enabled
+string auto_audio_how_body
+string auto_audio_how_title
+string auto_audio_no_file
+string auto_audio_select_file
+string auto_audio_title
+string auto_audio_toggle_label
+string channel_auto_audio
+string channel_auto_audio_desc
+string notification_text
+string notification_title
+style Theme.CarPlay
