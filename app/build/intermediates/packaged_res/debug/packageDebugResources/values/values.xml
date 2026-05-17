@@ -16,7 +16,7 @@
     <string name="firebase_database_url" translatable="false">https://my-own-ubiverse-default-rtdb.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">829161965482</string>
     <string name="google_api_key" translatable="false">AIzaSyDR8NlMDX0HuSB_TUpt5O_3Ded7vYKwiU0</string>
-    <string name="google_app_id" translatable="false">1:829161965482:android:1f9f82cb56e03ef5268dd3</string>
+    <string name="google_app_id" translatable="false">1:829161965482:android:cee422a598878318268dd3</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDR8NlMDX0HuSB_TUpt5O_3Ded7vYKwiU0</string>
     <string name="google_storage_bucket" translatable="false">my-own-ubiverse.firebasestorage.app</string>
     <string name="notification_text">Playing startup audio…</string>
