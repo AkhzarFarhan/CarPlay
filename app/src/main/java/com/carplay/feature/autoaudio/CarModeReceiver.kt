@@ -24,34 +24,35 @@ class CarModeReceiver : BroadcastReceiver() {
         val extras = intent.extras?.let { bundle ->
             bundle.keySet().joinToString { key -> "$key=${bundle.get(key)}" }
         } ?: "no extras"
-        diag.log("Broadcast", "Action: $action | Extras: $extras")
+        diag.log("Broadcast", "Action: $action | Extras: $extras", isPersistent = false)
 
         val shouldStart = when (action) {
             UiModeManager.ACTION_ENTER_CAR_MODE -> {
-                diag.log("Trigger", "Standard Car Mode detected")
+                diag.log("Trigger", "Standard Car Mode detected", isPersistent = false)
                 true
             }
             "com.zlink.status.CHANGE", "com.zlink5.status.CHANGE", "com.zholit.zlink.STATUS_CHANGED" -> {
                 val status = intent.getIntExtra("status", -1)
                 val linkState = intent.getIntExtra("link_state", -1)
-                diag.log("Trigger", "ZLink status: $status | link_state: $linkState")
+                diag.log("Trigger", "ZLink status: $status | link_state: $linkState", isPersistent = false)
                 // Status 2 or linkState 3 usually means "Connected"
                 status == 2 || linkState == 3
             }
             "com.suding.speedplay.receive", "com.zjinnova.zlink" -> {
                 val command = intent.getIntExtra("command", -1)
-                diag.log("Trigger", "Speedplay command: $command")
+                diag.log("Trigger", "Speedplay command: $command", isPersistent = false)
                 command == 1 || command == 3
             }
             else -> false
         }
 
         if (shouldStart) {
-            diag.log("Trigger", "Starting AudioPlayerService")
-            app.autoAudioStatusRepository.updateStatus(AudioStatus.CONNECTING)
-
-            val serviceIntent = Intent(context, AudioPlayerService::class.java)
-            context.startForegroundService(serviceIntent)
+            // Use centralized gate — prevents duplicates across all trigger sources
+            if (app.autoAudioStatusRepository.tryTrigger("Broadcast: $action")) {
+                diag.log("Trigger", "Gate PASSED — starting AudioPlayerService")
+                val serviceIntent = Intent(context, AudioPlayerService::class.java)
+                context.startForegroundService(serviceIntent)
+            }
         }
     }
 

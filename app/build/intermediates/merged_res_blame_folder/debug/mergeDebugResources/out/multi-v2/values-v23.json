@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.carplay.app-mergeDebugResources-3:/values-v23/values-v23.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Akhzar Farhan\\.gradle\\caches\\8.12\\transforms\\f890c1057e1bdde7ee93d2d63fda123d\\transformed\\work-runtime-2.9.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,121",
+                        "endColumns": "65,62",
+                        "endOffsets": "116,179"
+                    }
+                }
+            ]
+        }
+    ]
+}

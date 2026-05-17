@@ -24,16 +24,22 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * Foreground Service that handles the 3-second delay and audio playback.
  *
  * Flow:
  * 1. Promoted to foreground immediately (Android 16 requirement).
- * 2. Reads DataStore — if toggle is off or URI is null, stops self.
- * 3. Waits 3000ms for the car amplifier relays.
- * 4. Requests AudioFocus, creates MediaPlayer with correct AudioAttributes.
- * 5. Plays the audio, then cleans up and stops self.
+ * 2. Hard-locks via [isRunning] AtomicBoolean to prevent duplicate playback.
+ * 3. Reads DataStore — if toggle is off or URI is null, stops self.
+ * 4. Waits 3000ms for the car amplifier relays.
+ * 5. Requests AudioFocus, creates MediaPlayer with correct AudioAttributes.
+ * 6. Plays the audio, then cleans up and stops self.
+ *
+ * The centralized trigger gate ([AutoAudioStatusRepository.tryTrigger]) validates
+ * whether a trigger should start this service. This service's [isRunning] lock is a
+ * last-resort guard against Android re-delivering the same startCommand.
  */
 class AudioPlayerService : Service() {
 
@@ -41,16 +47,19 @@ class AudioPlayerService : Service() {
     private var audioFocusRequest: AudioFocusRequest? = null
     private val serviceScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
 
+    /**
+     * Atomic lock: set to true the instant onStartCommand begins work,
+     * cleared only when the full cycle completes (PLAYED/ERROR/stopSelf).
+     * Unlike the StateFlow check, this cannot be raced by two near-simultaneous starts.
+     */
+    private val isRunning = AtomicBoolean(false)
+
     override fun onBind(intent: Intent?): IBinder? = null
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        val app = application as CarPlayApplication
-        val repo = app.autoAudioStatusRepository
-        
-        // Prevent re-entry if already working
-        val current = repo.currentStatus.value
-        if (current == AudioStatus.DELAYING || current == AudioStatus.PLAYING) {
-            Log.d(TAG, "Service already in progress ($current) — ignoring start")
+        // Atomic re-entry guard — impossible to race
+        if (!isRunning.compareAndSet(false, true)) {
+            Log.d(TAG, "Service already running — ignoring duplicate start")
             return START_NOT_STICKY
         }
 
@@ -61,10 +70,10 @@ class AudioPlayerService : Service() {
             ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK
         )
 
+        val app = application as CarPlayApplication
+        val repo = app.autoAudioStatusRepository
+
         serviceScope.launch {
-            val app = application as CarPlayApplication
-            val repo = app.autoAudioStatusRepository
-            
             try {
                 repo.updateStatus(AudioStatus.CONNECTED)
                 val (enabled, uriString) = app.autoAudioPreferences.readSync()
@@ -73,14 +82,14 @@ class AudioPlayerService : Service() {
                     val reason = if (!enabled) "Toggle OFF" else "URI NULL"
                     Log.d(TAG, "Gatekeeper: $reason — aborting")
                     repo.updateStatus(AudioStatus.ERROR, reason)
-                    stopSelf()
+                    finishAndStop()
                     return@launch
                 }
 
                 // Wait for car amplifier relays to switch
                 repo.updateStatus(AudioStatus.DELAYING)
-                Log.d(TAG, "Waiting 3 seconds for amplifier relays…")
-                delay(3000)
+                Log.d(TAG, "Waiting 13 seconds for amplifier relays…")
+                delay(13000)
 
                 val uri = Uri.parse(uriString)
                 withContext(Dispatchers.Main) {
@@ -89,7 +98,7 @@ class AudioPlayerService : Service() {
             } catch (e: Exception) {
                 Log.e(TAG, "Error during audio playback flow", e)
                 repo.updateStatus(AudioStatus.ERROR, e.message)
-                stopSelf()
+                finishAndStop()
             }
         }
 
@@ -118,7 +127,7 @@ class AudioPlayerService : Service() {
         if (focusResult != AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
             Log.w(TAG, "AudioFocus denied — aborting playback")
             repo.updateStatus(AudioStatus.ERROR, "Audio Focus Denied")
-            stopSelf()
+            finishAndStop()
             return
         }
 
@@ -130,16 +139,14 @@ class AudioPlayerService : Service() {
                 setOnCompletionListener {
                     Log.d(TAG, "Playback complete")
                     repo.updateStatus(AudioStatus.PLAYED)
-                    releaseResources()
-                    stopSelf()
+                    finishAndStop()
                 }
 
                 setOnErrorListener { _, what, extra ->
                     val errorDetail = "MediaPlayer error: what=$what extra=$extra"
                     Log.e(TAG, errorDetail)
                     repo.updateStatus(AudioStatus.ERROR, errorDetail)
-                    releaseResources()
-                    stopSelf()
+                    finishAndStop()
                     true
                 }
 
@@ -150,9 +157,19 @@ class AudioPlayerService : Service() {
         } catch (e: Exception) {
             Log.e(TAG, "Failed to start MediaPlayer", e)
             repo.updateStatus(AudioStatus.ERROR, "MediaPlayer Start Failed: ${e.message}")
-            releaseResources()
-            stopSelf()
+            finishAndStop()
         }
+    }
+
+    /**
+     * Releases resources, clears the atomic lock, and stops the service.
+     * This is the ONLY way the service should terminate — ensures the
+     * AtomicBoolean is always cleared so future triggers can proceed.
+     */
+    private fun finishAndStop() {
+        releaseResources()
+        isRunning.set(false)
+        stopSelf()
     }
 
     private fun releaseResources() {
@@ -173,6 +190,7 @@ class AudioPlayerService : Service() {
 
     override fun onDestroy() {
         releaseResources()
+        isRunning.set(false)
         serviceScope.cancel()
         super.onDestroy()
     }

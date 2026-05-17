@@ -4,7 +4,7 @@
             "outputFile": "com.carplay.app-mergeDebugResources-3:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Akhzar Farhan\\.gradle\\caches\\8.12\\transforms\\ba7baa5bc0b60df6539e17fd3ab6b21b\\transformed\\media-1.6.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Akhzar Farhan\\.gradle\\caches\\8.12\\transforms\\1eaa7978ee3fe804bfaec02aa9162c74\\transformed\\media-1.6.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

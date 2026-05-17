@@ -15,6 +15,21 @@ import java.io.IOException
 import java.util.UUID
 
 /**
+ * Real-time sensor data from the vehicle.
+ */
+data class ObdLiveData(
+    val rpm: Int = 0,
+    val speed: Int = 0,
+    val coolantTemp: Int = 0,
+    val engineLoad: Int = 0
+)
+
+data class FullObdReport(
+    val faultCodes: List<String>,
+    val liveData: ObdLiveData
+)
+
+/**
  * Manages connection and communication with OBD-II Bluetooth adapters.
  */
 class ObdManager(private val context: Context) {
@@ -55,11 +70,61 @@ class ObdManager(private val context: Context) {
         }
     }
 
-    suspend fun readFaultCodes(): List<String> = withContext(Dispatchers.IO) {
-        if (_connectionState.value != ConnectionState.CONNECTED) return@withContext emptyList<String>()
+    suspend fun readFullReport(): FullObdReport = withContext(Dispatchers.IO) {
+        if (_connectionState.value != ConnectionState.CONNECTED) {
+            return@withContext FullObdReport(emptyList(), ObdLiveData())
+        }
 
-        val response = sendCommand("03") // Mode 03: Request trouble codes
-        parseDtcResponse(response)
+        val dtcResponse = sendCommand("03")
+        val codes = parseDtcResponse(dtcResponse)
+
+        val rpm = parseRpm(sendCommand("010C"))
+        val speed = parseSpeed(sendCommand("010D"))
+        val temp = parseTemp(sendCommand("0105"))
+        val load = parseLoad(sendCommand("0104"))
+
+        FullObdReport(
+            faultCodes = codes,
+            liveData = ObdLiveData(rpm, speed, temp, load)
+        )
+    }
+
+    private fun parseRpm(response: String): Int {
+        // Example: 41 0C 0F A0 -> ((15 * 256) + 160) / 4 = 1000
+        val parts = response.split(" ")
+        if (parts.size >= 4 && parts[0] == "41" && parts[1] == "0C") {
+            val a = parts[2].toInt(16)
+            val b = parts[3].toInt(16)
+            return (a * 256 + b) / 4
+        }
+        return 0
+    }
+
+    private fun parseSpeed(response: String): Int {
+        // Example: 41 0D 32 -> 50 km/h
+        val parts = response.split(" ")
+        if (parts.size >= 3 && parts[0] == "41" && parts[1] == "0D") {
+            return parts[2].toInt(16)
+        }
+        return 0
+    }
+
+    private fun parseTemp(response: String): Int {
+        // Example: 41 05 5A -> 90 - 40 = 50 C
+        val parts = response.split(" ")
+        if (parts.size >= 3 && parts[0] == "41" && parts[1] == "05") {
+            return parts[2].toInt(16) - 40
+        }
+        return 0
+    }
+
+    private fun parseLoad(response: String): Int {
+        // Example: 41 04 7F -> (127 * 100) / 255 = 49.8%
+        val parts = response.split(" ")
+        if (parts.size >= 3 && parts[0] == "41" && parts[1] == "04") {
+            return (parts[2].toInt(16) * 100) / 255
+        }
+        return 0
     }
 
     private suspend fun sendCommand(command: String): String = withContext(Dispatchers.IO) {

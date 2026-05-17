@@ -4,7 +4,7 @@
             "outputFile": "com.carplay.app-mergeDebugResources-3:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Akhzar Farhan\\.gradle\\caches\\8.12\\transforms\\576dbc3a306354430d68ec4fe8911d54\\transformed\\app-1.7.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\Akhzar Farhan\\.gradle\\caches\\8.12\\transforms\\e3a6f5858b6dfaea7bbe323d7fc864fe\\transformed\\app-1.7.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

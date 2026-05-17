@@ -27,8 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
-import com.google.accompanist.permissions.isGranted
-import com.google.accompanist.permissions.rememberPermissionState
+import com.google.accompanist.permissions.rememberMultiplePermissionsState
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -40,11 +39,19 @@ fun ObdScreen(
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
-    val bluetoothPermissionState = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-        rememberPermissionState(Manifest.permission.BLUETOOTH_CONNECT)
-    } else {
-        rememberPermissionState(Manifest.permission.BLUETOOTH)
-    }
+    // On API 31+ (Android 12), both BLUETOOTH_CONNECT and BLUETOOTH_SCAN are required:
+    // - BLUETOOTH_CONNECT: for bondedDevices, socket connect, device.name
+    // - BLUETOOTH_SCAN: for cancelDiscovery() in ObdManager
+    val bluetoothPermissions = rememberMultiplePermissionsState(
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            listOf(
+                Manifest.permission.BLUETOOTH_CONNECT,
+                Manifest.permission.BLUETOOTH_SCAN
+            )
+        } else {
+            listOf(Manifest.permission.BLUETOOTH)
+        }
+    )
 
     Scaffold(
         topBar = {
@@ -64,8 +71,8 @@ fun ObdScreen(
                 .padding(padding)
                 .padding(16.dp)
         ) {
-            if (!bluetoothPermissionState.status.isGranted) {
-                BluetoothPermissionView { bluetoothPermissionState.launchPermissionRequest() }
+            if (!bluetoothPermissions.allPermissionsGranted) {
+                BluetoothPermissionView { bluetoothPermissions.launchMultiplePermissionRequest() }
             } else {
                 ObdDashboard(uiState, viewModel)
             }
@@ -133,6 +140,28 @@ fun ObdDashboard(uiState: ObdUiState, viewModel: ObdViewModel) {
                     Button(onClick = { viewModel.disconnect() }) {
                         Text("Disconnect")
                     }
+                }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // ── Live Data Section ──
+        Text("Real-Time Sensors", style = MaterialTheme.typography.titleLarge)
+        Spacer(modifier = Modifier.height(8.dp))
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)
+        ) {
+            Column(modifier = Modifier.padding(16.dp)) {
+                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                    LiveDataItem("RPM", "${uiState.liveData.rpm}", "r/min", Modifier.weight(1f))
+                    LiveDataItem("Speed", "${uiState.liveData.speed}", "km/h", Modifier.weight(1f))
+                }
+                Spacer(modifier = Modifier.height(12.dp))
+                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                    LiveDataItem("Coolant", "${uiState.liveData.coolantTemp}", "°C", Modifier.weight(1f))
+                    LiveDataItem("Load", "${uiState.liveData.engineLoad}", "%", Modifier.weight(1f))
                 }
             }
         }
@@ -208,6 +237,18 @@ fun ObdDashboard(uiState: ObdUiState, viewModel: ObdViewModel) {
                     showDevicePicker = false
                 }
             )
+        }
+    }
+}
+
+@Composable
+fun LiveDataItem(label: String, value: String, unit: String, modifier: Modifier = Modifier) {
+    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(text = label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSecondaryContainer)
+        Row(verticalAlignment = Alignment.Bottom) {
+            Text(text = value, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+            Spacer(modifier = Modifier.width(4.dp))
+            Text(text = unit, style = MaterialTheme.typography.labelSmall, modifier = Modifier.padding(bottom = 4.dp))
         }
     }
 }

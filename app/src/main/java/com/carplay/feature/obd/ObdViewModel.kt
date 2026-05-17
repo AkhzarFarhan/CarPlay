@@ -11,6 +11,7 @@ import kotlinx.coroutines.launch
 data class ObdUiState(
     val connectionState: ObdManager.ConnectionState = ObdManager.ConnectionState.DISCONNECTED,
     val currentFaults: List<DtcInfo> = emptyList(),
+    val liveData: ObdLiveData = ObdLiveData(),
     val history: List<ObdReport> = emptyList(),
     val isExporting: Boolean = false,
     val errorMessage: String? = null
@@ -61,9 +62,14 @@ class ObdViewModel(
     fun refreshFaults() {
         viewModelScope.launch {
             try {
-                val codes = obdManager.readFaultCodes()
-                val dtcs = codes.map { DtcDecoder.decode(it) }
-                _uiState.value = _uiState.value.copy(currentFaults = dtcs)
+                val fullReport = obdManager.readFullReport()
+                val dtcs = fullReport.faultCodes.map { DtcDecoder.decode(it) }
+                _uiState.value = _uiState.value.copy(
+                    currentFaults = dtcs,
+                    liveData = fullReport.liveData
+                )
+                // Auto-export to Firebase on every manual scan
+                repository.uploadReport(fullReport)
             } catch (e: Exception) {
                 _uiState.value = _uiState.value.copy(errorMessage = "Scan failed: ${e.message}")
             }
@@ -74,8 +80,8 @@ class ObdViewModel(
         viewModelScope.launch {
             _uiState.value = _uiState.value.copy(isExporting = true)
             try {
-                val codes = _uiState.value.currentFaults.map { it.code }
-                repository.uploadReport(codes)
+                val fullReport = obdManager.readFullReport()
+                repository.uploadReport(fullReport)
                 _uiState.value = _uiState.value.copy(isExporting = false, errorMessage = "Export successful!")
             } catch (e: Exception) {
                 _uiState.value = _uiState.value.copy(isExporting = false, errorMessage = "Export failed: ${e.message}")

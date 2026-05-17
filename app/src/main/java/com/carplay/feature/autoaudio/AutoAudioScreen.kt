@@ -331,9 +331,11 @@ fun AutoAudioScreen(
                             Button(
                                 onClick = {
                                     scope.launch {
-                                        val serviceIntent = Intent(context, AudioPlayerService::class.java)
-                                        context.startForegroundService(serviceIntent)
                                         diagnosticsRepository.log("Manual", "Force Trigger Play")
+                                        if (statusRepository.tryTrigger("Manual: Force Play")) {
+                                            val serviceIntent = Intent(context, AudioPlayerService::class.java)
+                                            context.startForegroundService(serviceIntent)
+                                        }
                                     }
                                 },
                                 modifier = Modifier.weight(1f)

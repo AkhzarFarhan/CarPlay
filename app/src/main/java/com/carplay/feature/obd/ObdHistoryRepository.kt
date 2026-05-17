@@ -16,7 +16,11 @@ import kotlinx.coroutines.tasks.await
 data class ObdReport(
     val id: String = "",
     val timestamp: Long = System.currentTimeMillis(),
-    val faultCodes: List<String> = emptyList()
+    val faultCodes: List<String> = emptyList(),
+    val rpm: Int = 0,
+    val speed: Int = 0,
+    val coolantTemp: Int = 0,
+    val engineLoad: Int = 0
 )
 
 class ObdHistoryRepository {
@@ -28,11 +32,18 @@ class ObdHistoryRepository {
     }
     private val ref = database?.getReference("CarPlay/akhzarfarhan/obd_history")
 
-    suspend fun uploadReport(faultCodes: List<String>) {
+    suspend fun uploadReport(report: FullObdReport) {
         val reference = ref ?: return
         val reportId = reference.push().key ?: return
-        val report = ObdReport(id = reportId, faultCodes = faultCodes)
-        reference.child(reportId).setValue(report).await()
+        val finalReport = ObdReport(
+            id = reportId,
+            faultCodes = report.faultCodes,
+            rpm = report.liveData.rpm,
+            speed = report.liveData.speed,
+            coolantTemp = report.liveData.coolantTemp,
+            engineLoad = report.liveData.engineLoad
+        )
+        reference.child(reportId).setValue(finalReport).await()
     }
 
     fun getHistoryFlow(): Flow<List<ObdReport>> = callbackFlow {

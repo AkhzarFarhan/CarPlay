@@ -1,0 +1,53 @@
+# CarPlay — AI Coding Rules
+# This file is auto-ingested by Cursor, Windsurf, and compatible AI IDEs.
+# For the full specification, read AGENTS.md in the project root.
+
+## Project Summary
+Android 16 (API 36) super-app in Kotlin + Jetpack Compose + Material 3.
+Single :app module. Dark-only automotive theme. Manual DI via CarPlayApplication.
+
+## Critical Rules — Read Before Every Change
+
+1. ARCHITECTURE: Features go in `feature/<name>/`. Shared code in `core/`. Theme in `ui/theme/`. Nav in `navigation/`. Never mix these.
+
+2. MANUAL DI ONLY: No Hilt, Koin, or Dagger. All singletons are `lateinit var` on `CarPlayApplication`. Pass deps explicitly through composable params.
+
+3. NEW FEATURE CHECKLIST:
+   a) Create package `feature/<name>/`
+   b) Add route to `Screen.kt` sealed class
+   c) Add `composable()` in `AppNavGraph.kt`
+   d) Add `FeatureItem` card in `DashboardScreen.kt`
+
+4. COMPOSE PATTERNS:
+   - State hoisting: screens receive deps as params
+   - Navigation: via `onNavigateBack` lambda, never call navController from feature screens
+   - Colors: use MaterialTheme.colorScheme.*, never hardcode
+   - Strings: use @string/ resources for user-facing text
+
+5. SERVICES (Android 16):
+   - Call startForeground() IMMEDIATELY in onStartCommand()
+   - Specify foregroundServiceType in manifest AND code
+   - Use service-scoped CoroutineScope(Dispatchers.Default + SupervisorJob())
+   - Cancel scope in onDestroy(), release all resources
+
+6. STORAGE:
+   - DataStore via AppDataStore singleton. Never create a second preferencesDataStore.
+   - Namespace keys with feature prefix (e.g., auto_audio_*)
+   - URI persistence: use OpenDocument + takePersistableUriPermission
+   - Firebase: wrap init in try/catch, fire-and-forget writes, callbackFlow for reads
+
+7. DEPENDENCIES:
+   - All versions in gradle/libs.versions.toml — never hardcode in build.gradle.kts
+   - Single :app module — do NOT create new Gradle modules
+
+8. ERROR HANDLING:
+   - Wrap all suspend calls in try/catch in ViewModels
+   - Surface errors as errorMessage in UiState data class
+   - Services: log errors, update status enum, call stopSelf()
+
+9. DO NOT:
+   - Use GlobalScope, runBlocking, SharedPreferences, ACTION_GET_CONTENT
+   - Create light theme variants
+   - Add DI frameworks
+   - Skip startForeground() in services
+   - Navigate from inside feature screens
