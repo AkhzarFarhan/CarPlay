@@ -44,6 +44,16 @@ class AudioPlayerService : Service() {
     override fun onBind(intent: Intent?): IBinder? = null
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        val app = application as CarPlayApplication
+        val repo = app.autoAudioStatusRepository
+        
+        // Prevent re-entry if already working
+        val current = repo.currentStatus.value
+        if (current == AudioStatus.DELAYING || current == AudioStatus.PLAYING) {
+            Log.d(TAG, "Service already in progress ($current) — ignoring start")
+            return START_NOT_STICKY
+        }
+
         // Must call startForeground() immediately on Android 14+
         startForeground(
             NOTIFICATION_ID,
@@ -52,17 +62,23 @@ class AudioPlayerService : Service() {
         )
 
         serviceScope.launch {
+            val app = application as CarPlayApplication
+            val repo = app.autoAudioStatusRepository
+            
             try {
-                val app = application as CarPlayApplication
+                repo.updateStatus(AudioStatus.CONNECTED)
                 val (enabled, uriString) = app.autoAudioPreferences.readSync()
 
                 if (!enabled || uriString == null) {
-                    Log.d(TAG, "Gatekeeper: toggle=$enabled, uri=$uriString — aborting")
+                    val reason = if (!enabled) "Toggle OFF" else "URI NULL"
+                    Log.d(TAG, "Gatekeeper: $reason — aborting")
+                    repo.updateStatus(AudioStatus.ERROR, reason)
                     stopSelf()
                     return@launch
                 }
 
                 // Wait for car amplifier relays to switch
+                repo.updateStatus(AudioStatus.DELAYING)
                 Log.d(TAG, "Waiting 3 seconds for amplifier relays…")
                 delay(3000)
 
@@ -72,6 +88,7 @@ class AudioPlayerService : Service() {
                 }
             } catch (e: Exception) {
                 Log.e(TAG, "Error during audio playback flow", e)
+                repo.updateStatus(AudioStatus.ERROR, e.message)
                 stopSelf()
             }
         }
@@ -80,6 +97,8 @@ class AudioPlayerService : Service() {
     }
 
     private fun playAudio(uri: Uri) {
+        val app = application as CarPlayApplication
+        val repo = app.autoAudioStatusRepository
         val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
         val attrs = AudioAttributes.Builder()
@@ -94,9 +113,11 @@ class AudioPlayerService : Service() {
             .build()
         audioFocusRequest = focusRequest
 
+        repo.updateStatus(AudioStatus.PLAYING)
         val focusResult = audioManager.requestAudioFocus(focusRequest)
         if (focusResult != AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
             Log.w(TAG, "AudioFocus denied — aborting playback")
+            repo.updateStatus(AudioStatus.ERROR, "Audio Focus Denied")
             stopSelf()
             return
         }
@@ -108,12 +129,15 @@ class AudioPlayerService : Service() {
 
                 setOnCompletionListener {
                     Log.d(TAG, "Playback complete")
+                    repo.updateStatus(AudioStatus.PLAYED)
                     releaseResources()
                     stopSelf()
                 }
 
                 setOnErrorListener { _, what, extra ->
-                    Log.e(TAG, "MediaPlayer error: what=$what extra=$extra")
+                    val errorDetail = "MediaPlayer error: what=$what extra=$extra"
+                    Log.e(TAG, errorDetail)
+                    repo.updateStatus(AudioStatus.ERROR, errorDetail)
                     releaseResources()
                     stopSelf()
                     true
@@ -125,6 +149,7 @@ class AudioPlayerService : Service() {
             }
         } catch (e: Exception) {
             Log.e(TAG, "Failed to start MediaPlayer", e)
+            repo.updateStatus(AudioStatus.ERROR, "MediaPlayer Start Failed: ${e.message}")
             releaseResources()
             stopSelf()
         }

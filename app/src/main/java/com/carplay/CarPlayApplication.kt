@@ -5,6 +5,10 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import com.carplay.core.datastore.AppDataStore
 import com.carplay.feature.autoaudio.AutoAudioPreferences
+import com.carplay.feature.autoaudio.AutoAudioStatusRepository
+import com.carplay.feature.autoaudio.DiagnosticsRepository
+import com.carplay.feature.obd.ObdHistoryRepository
+import com.carplay.feature.obd.ObdManager
 
 class CarPlayApplication : Application() {
 
@@ -14,10 +18,26 @@ class CarPlayApplication : Application() {
     lateinit var autoAudioPreferences: AutoAudioPreferences
         private set
 
+    lateinit var autoAudioStatusRepository: AutoAudioStatusRepository
+        private set
+
+    lateinit var diagnosticsRepository: DiagnosticsRepository
+        private set
+
+    lateinit var obdManager: ObdManager
+        private set
+
+    lateinit var obdHistoryRepository: ObdHistoryRepository
+        private set
+
     override fun onCreate() {
         super.onCreate()
         dataStore = AppDataStore(this)
         autoAudioPreferences = AutoAudioPreferences(dataStore)
+        diagnosticsRepository = DiagnosticsRepository()
+        autoAudioStatusRepository = AutoAudioStatusRepository(diagnosticsRepository)
+        obdManager = ObdManager(this)
+        obdHistoryRepository = ObdHistoryRepository()
         createNotificationChannels()
     }
 

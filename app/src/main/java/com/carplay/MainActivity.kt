@@ -1,6 +1,8 @@
 package com.carplay
 
+import android.content.Context
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -10,6 +12,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.navigation.compose.rememberNavController
+import com.carplay.feature.autoaudio.AutoAudioDetectionService
 import com.carplay.navigation.AppNavGraph
 import com.carplay.ui.theme.CarPlayTheme
 
@@ -26,12 +29,19 @@ class MainActivity : ComponentActivity() {
 
         val app = application as CarPlayApplication
 
+        // Start High-Speed Detection Service
+        startService(Intent(this, AutoAudioDetectionService::class.java))
+
         setContent {
             CarPlayTheme {
                 val navController = rememberNavController()
                 AppNavGraph(
                     navController = navController,
-                    autoAudioPreferences = app.autoAudioPreferences
+                    autoAudioPreferences = app.autoAudioPreferences,
+                    autoAudioStatusRepository = app.autoAudioStatusRepository,
+                    diagnosticsRepository = app.diagnosticsRepository,
+                    obdManager = app.obdManager,
+                    obdHistoryRepository = app.obdHistoryRepository
                 )
             }
         }

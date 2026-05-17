@@ -10,211 +10,352 @@
 10
 11    <!-- Foreground Service permissions (Android 14+ requires type-specific permission) -->
 12    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-12-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:5:5-77
-12-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:5:22-74
+12-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:6:5-77
+12-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:6:22-74
 13    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
-13-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:6:5-92
-13-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:6:22-89
+13-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:7:5-92
+13-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:7:22-89
 14
 15    <!-- Notification permission (Android 13+) -->
 16    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-16-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:9:5-77
-16-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:9:22-74
+16-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:10:5-77
+16-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:10:22-74
 17
-18    <queries>
-18-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\AndroidManifest.xml:23:5-28:15
-19        <provider
-19-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\AndroidManifest.xml:24:9-27:43
-20            android:name="androidx.car.app.connection.provider"
-20-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\AndroidManifest.xml:25:13-64
-21            android:authorities="androidx.car.app.connection" />
-21-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\AndroidManifest.xml:26:13-62
-22    </queries>
-23
-24    <permission
-24-->[androidx.core:core:1.16.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\90d6ce51648f0023e73bfaa8acb52bda\transformed\core-1.16.0\AndroidManifest.xml:22:5-24:47
-25        android:name="com.carplay.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-25-->[androidx.core:core:1.16.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\90d6ce51648f0023e73bfaa8acb52bda\transformed\core-1.16.0\AndroidManifest.xml:23:9-81
-26        android:protectionLevel="signature" />
-26-->[androidx.core:core:1.16.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\90d6ce51648f0023e73bfaa8acb52bda\transformed\core-1.16.0\AndroidManifest.xml:24:9-44
-27
-28    <uses-permission android:name="com.carplay.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-28-->[androidx.core:core:1.16.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\90d6ce51648f0023e73bfaa8acb52bda\transformed\core-1.16.0\AndroidManifest.xml:26:5-97
-28-->[androidx.core:core:1.16.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\90d6ce51648f0023e73bfaa8acb52bda\transformed\core-1.16.0\AndroidManifest.xml:26:22-94
+18    <!-- Bluetooth permissions -->
+19    <uses-permission
+19-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:13:5-95
+20        android:name="android.permission.BLUETOOTH"
+20-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:13:22-65
+21        android:maxSdkVersion="30" />
+21-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:13:66-92
+22    <uses-permission
+22-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:14:5-101
+23        android:name="android.permission.BLUETOOTH_ADMIN"
+23-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:14:22-71
+24        android:maxSdkVersion="30" />
+24-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:14:72-98
+25    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+25-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:15:5-73
+25-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:15:22-70
+26    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+26-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:16:5-76
+26-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:16:22-73
+27    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+27-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:17:5-79
+27-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:17:22-76
+28    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+28-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:18:5-81
+28-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:18:22-78
 29
-30    <application
-30-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:11:5-47:19
-31        android:name="com.carplay.CarPlayApplication"
-31-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:12:9-43
-32        android:allowBackup="true"
-32-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:13:9-35
-33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-33-->[androidx.core:core:1.16.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\90d6ce51648f0023e73bfaa8acb52bda\transformed\core-1.16.0\AndroidManifest.xml:28:18-86
-34        android:debuggable="true"
-35        android:extractNativeLibs="false"
-36        android:icon="@mipmap/ic_launcher"
-36-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:14:9-43
-37        android:label="@string/app_name"
-37-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:15:9-41
-38        android:supportsRtl="true"
-38-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:16:9-35
-39        android:theme="@style/Theme.CarPlay" >
-39-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:17:9-45
-40        <activity
-40-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:19:9-27:20
-41            android:name="com.carplay.MainActivity"
-41-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:20:13-41
-42            android:exported="true"
-42-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:21:13-36
-43            android:theme="@style/Theme.CarPlay" >
-43-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:22:13-49
-44            <intent-filter>
-44-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:23:13-26:29
-45                <action android:name="android.intent.action.MAIN" />
-45-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:24:17-69
-45-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:24:25-66
-46
-47                <category android:name="android.intent.category.LAUNCHER" />
-47-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:25:17-77
-47-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:25:27-74
-48            </intent-filter>
-49        </activity>
-50
-51        <!-- Auto-Audio Foreground Service -->
-52        <service
-52-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:30:9-33:40
-53            android:name="com.carplay.feature.autoaudio.AudioPlayerService"
-53-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:31:13-65
-54            android:exported="false"
-54-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:33:13-37
-55            android:foregroundServiceType="mediaPlayback" />
-55-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:32:13-58
-56
-57        <!-- Car Mode Detection and ZLink Connection Events -->
-58        <receiver
-58-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:36:9-45:20
-59            android:name="com.carplay.feature.autoaudio.CarModeReceiver"
-59-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:37:13-62
-60            android:exported="true" >
-60-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:38:13-36
-61            <intent-filter>
-61-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:39:13-44:29
-62                <action android:name="android.app.action.ENTER_CAR_MODE" />
-62-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:40:17-76
-62-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:40:25-73
-63                <action android:name="com.zlink.status.CHANGE" />
-63-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:41:17-66
-63-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:41:25-63
-64                <action android:name="com.zlink5.status.CHANGE" />
-64-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:42:17-67
-64-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:42:25-64
-65                <action android:name="com.suding.speedplay.receive" />
-65-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:43:17-71
-65-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:43:25-68
-66            </intent-filter>
-67        </receiver>
-68
-69        <activity
-69-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\AndroidManifest.xml:31:9-34:75
-70            android:name="androidx.car.app.CarAppPermissionActivity"
-70-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\AndroidManifest.xml:32:13-69
-71            android:exported="false"
-71-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\AndroidManifest.xml:33:13-37
-72            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-72-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\AndroidManifest.xml:34:13-72
-73
-74        <receiver
-74-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\AndroidManifest.xml:36:9-38:40
-75            android:name="androidx.car.app.notification.CarAppNotificationBroadcastReceiver"
-75-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\AndroidManifest.xml:37:13-93
-76            android:exported="false" />
-76-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\AndroidManifest.xml:38:13-37
-77
-78        <activity
-78-->[androidx.compose.ui:ui-tooling-android:1.11.1] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\c1201f97d5e4fc6aa1b4d93a889e615a\transformed\ui-tooling\AndroidManifest.xml:23:9-25:39
-79            android:name="androidx.compose.ui.tooling.PreviewActivity"
-79-->[androidx.compose.ui:ui-tooling-android:1.11.1] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\c1201f97d5e4fc6aa1b4d93a889e615a\transformed\ui-tooling\AndroidManifest.xml:24:13-71
-80            android:exported="true" />
-80-->[androidx.compose.ui:ui-tooling-android:1.11.1] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\c1201f97d5e4fc6aa1b4d93a889e615a\transformed\ui-tooling\AndroidManifest.xml:25:13-36
-81
-82        <provider
-82-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\68e498512b08b84dcb14820e79b61f1f\transformed\emoji2-1.4.0\AndroidManifest.xml:24:9-32:20
-83            android:name="androidx.startup.InitializationProvider"
-83-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\68e498512b08b84dcb14820e79b61f1f\transformed\emoji2-1.4.0\AndroidManifest.xml:25:13-67
-84            android:authorities="com.carplay.androidx-startup"
-84-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\68e498512b08b84dcb14820e79b61f1f\transformed\emoji2-1.4.0\AndroidManifest.xml:26:13-68
-85            android:exported="false" >
-85-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\68e498512b08b84dcb14820e79b61f1f\transformed\emoji2-1.4.0\AndroidManifest.xml:27:13-37
-86            <meta-data
-86-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\68e498512b08b84dcb14820e79b61f1f\transformed\emoji2-1.4.0\AndroidManifest.xml:29:13-31:52
-87                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-87-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\68e498512b08b84dcb14820e79b61f1f\transformed\emoji2-1.4.0\AndroidManifest.xml:30:17-75
-88                android:value="androidx.startup" />
-88-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\68e498512b08b84dcb14820e79b61f1f\transformed\emoji2-1.4.0\AndroidManifest.xml:31:17-49
-89            <meta-data
-89-->[androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\ad477600096c856292b172498aee9533\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:29:13-31:52
-90                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-90-->[androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\ad477600096c856292b172498aee9533\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:30:17-78
-91                android:value="androidx.startup" />
-91-->[androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\ad477600096c856292b172498aee9533\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:31:17-49
-92            <meta-data
-92-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
-93                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-93-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
-94                android:value="androidx.startup" />
-94-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
-95        </provider>
-96
-97        <uses-library
-97-->[androidx.window:window:1.5.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\6f659fe54c8387e222a37cc12469ef3b\transformed\window-1.5.0\AndroidManifest.xml:23:9-25:40
-98            android:name="androidx.window.extensions"
-98-->[androidx.window:window:1.5.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\6f659fe54c8387e222a37cc12469ef3b\transformed\window-1.5.0\AndroidManifest.xml:24:13-54
-99            android:required="false" />
-99-->[androidx.window:window:1.5.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\6f659fe54c8387e222a37cc12469ef3b\transformed\window-1.5.0\AndroidManifest.xml:25:13-37
-100        <uses-library
-100-->[androidx.window:window:1.5.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\6f659fe54c8387e222a37cc12469ef3b\transformed\window-1.5.0\AndroidManifest.xml:26:9-28:40
-101            android:name="androidx.window.sidecar"
-101-->[androidx.window:window:1.5.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\6f659fe54c8387e222a37cc12469ef3b\transformed\window-1.5.0\AndroidManifest.xml:27:13-51
-102            android:required="false" />
-102-->[androidx.window:window:1.5.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\6f659fe54c8387e222a37cc12469ef3b\transformed\window-1.5.0\AndroidManifest.xml:28:13-37
-103
-104        <receiver
-104-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
-105            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-105-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
-106            android:directBootAware="false"
-106-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
-107            android:enabled="true"
-107-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
-108            android:exported="true"
-108-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
-109            android:permission="android.permission.DUMP" >
-109-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
-110            <intent-filter>
-110-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
-111                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-111-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
-111-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
-112            </intent-filter>
-113            <intent-filter>
-113-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
-114                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-114-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
-114-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
-115            </intent-filter>
-116            <intent-filter>
-116-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
-117                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-117-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
-117-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
-118            </intent-filter>
-119            <intent-filter>
-119-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
-120                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-120-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
-120-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
-121            </intent-filter>
-122        </receiver>
-123    </application>
-124
-125</manifest>
+30    <!-- Foreground App Detection -->
+31    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+31-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:21:5-114
+31-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:21:22-75
+32
+33    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+34    <!-- <uses-sdk android:minSdkVersion="21"/> -->
+35    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+35-->[com.google.firebase:firebase-database:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\0a4ec9b482ae53150b8c0388cf986484\transformed\firebase-database-21.0.0\AndroidManifest.xml:22:5-79
+35-->[com.google.firebase:firebase-database:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\0a4ec9b482ae53150b8c0388cf986484\transformed\firebase-database-21.0.0\AndroidManifest.xml:22:22-76
+36    <uses-permission android:name="android.permission.INTERNET" />
+36-->[com.google.firebase:firebase-database:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\0a4ec9b482ae53150b8c0388cf986484\transformed\firebase-database-21.0.0\AndroidManifest.xml:23:5-67
+36-->[com.google.firebase:firebase-database:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\0a4ec9b482ae53150b8c0388cf986484\transformed\firebase-database-21.0.0\AndroidManifest.xml:23:22-64
+37
+38    <queries>
+38-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\576dbc3a306354430d68ec4fe8911d54\transformed\app-1.7.0\AndroidManifest.xml:23:5-28:15
+39        <provider
+39-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\576dbc3a306354430d68ec4fe8911d54\transformed\app-1.7.0\AndroidManifest.xml:24:9-27:43
+40            android:name="androidx.car.app.connection.provider"
+40-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\576dbc3a306354430d68ec4fe8911d54\transformed\app-1.7.0\AndroidManifest.xml:25:13-64
+41            android:authorities="androidx.car.app.connection" />
+41-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\576dbc3a306354430d68ec4fe8911d54\transformed\app-1.7.0\AndroidManifest.xml:26:13-62
+42    </queries>
+43
+44    <permission
+44-->[androidx.core:core:1.16.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d26b391081962bb40c0ce41cf990e63c\transformed\core-1.16.0\AndroidManifest.xml:22:5-24:47
+45        android:name="com.carplay.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+45-->[androidx.core:core:1.16.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d26b391081962bb40c0ce41cf990e63c\transformed\core-1.16.0\AndroidManifest.xml:23:9-81
+46        android:protectionLevel="signature" />
+46-->[androidx.core:core:1.16.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d26b391081962bb40c0ce41cf990e63c\transformed\core-1.16.0\AndroidManifest.xml:24:9-44
+47
+48    <uses-permission android:name="com.carplay.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+48-->[androidx.core:core:1.16.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d26b391081962bb40c0ce41cf990e63c\transformed\core-1.16.0\AndroidManifest.xml:26:5-97
+48-->[androidx.core:core:1.16.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d26b391081962bb40c0ce41cf990e63c\transformed\core-1.16.0\AndroidManifest.xml:26:22-94
+49
+50    <application
+50-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:23:5-77:19
+51        android:name="com.carplay.CarPlayApplication"
+51-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:24:9-43
+52        android:allowBackup="true"
+52-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:25:9-35
+53        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+53-->[androidx.core:core:1.16.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d26b391081962bb40c0ce41cf990e63c\transformed\core-1.16.0\AndroidManifest.xml:28:18-86
+54        android:debuggable="true"
+55        android:extractNativeLibs="false"
+56        android:icon="@mipmap/ic_launcher"
+56-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:26:9-43
+57        android:label="@string/app_name"
+57-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:27:9-41
+58        android:supportsRtl="true"
+58-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:28:9-35
+59        android:theme="@style/Theme.CarPlay" >
+59-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:29:9-45
+60        <activity
+60-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:31:9-39:20
+61            android:name="com.carplay.MainActivity"
+61-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:32:13-41
+62            android:exported="true"
+62-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:33:13-36
+63            android:theme="@style/Theme.CarPlay" >
+63-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:34:13-49
+64            <intent-filter>
+64-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:35:13-38:29
+65                <action android:name="android.intent.action.MAIN" />
+65-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:36:17-69
+65-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:36:25-66
+66
+67                <category android:name="android.intent.category.LAUNCHER" />
+67-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:37:17-77
+67-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:37:27-74
+68            </intent-filter>
+69        </activity>
+70
+71        <!-- Auto-Audio Foreground Service -->
+72        <service
+72-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:42:9-45:40
+73            android:name="com.carplay.feature.autoaudio.AudioPlayerService"
+73-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:43:13-65
+74            android:exported="false"
+74-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:45:13-37
+75            android:foregroundServiceType="mediaPlayback" />
+75-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:44:13-58
+76
+77        <!-- Car Mode Detection and ZLink Connection Events -->
+78        <receiver
+78-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:48:9-59:20
+79            android:name="com.carplay.feature.autoaudio.CarModeReceiver"
+79-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:49:13-62
+80            android:exported="true" >
+80-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:50:13-36
+81            <intent-filter>
+81-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:51:13-58:29
+82                <action android:name="android.app.action.ENTER_CAR_MODE" />
+82-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:52:17-76
+82-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:52:25-73
+83                <action android:name="com.zlink.status.CHANGE" />
+83-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:53:17-66
+83-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:53:25-63
+84                <action android:name="com.zlink5.status.CHANGE" />
+84-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:54:17-67
+84-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:54:25-64
+85                <action android:name="com.zholit.zlink.STATUS_CHANGED" />
+85-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:55:17-74
+85-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:55:25-71
+86                <action android:name="com.suding.speedplay.receive" />
+86-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:56:17-71
+86-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:56:25-68
+87                <action android:name="com.zjinnova.zlink" />
+87-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:57:17-61
+87-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:57:25-58
+88            </intent-filter>
+89        </receiver>
+90
+91        <!-- Notification-based Detection -->
+92        <service
+92-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:62:9-70:19
+93            android:name="com.carplay.feature.autoaudio.AutoAudioNotificationListener"
+93-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:63:13-76
+94            android:exported="true"
+94-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:66:13-36
+95            android:label="@string/app_name"
+95-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:64:13-45
+96            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+96-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:65:13-87
+97            <intent-filter>
+97-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:67:13-69:29
+98                <action android:name="android.service.notification.NotificationListenerService" />
+98-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:68:17-99
+98-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:68:25-96
+99            </intent-filter>
+100        </service>
+101
+102        <!-- High-Speed Foreground Detection -->
+103        <service
+103-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:73:9-75:40
+104            android:name="com.carplay.feature.autoaudio.AutoAudioDetectionService"
+104-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:74:13-72
+105            android:exported="false" />
+105-->C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:75:13-37
+106
+107        <activity
+107-->[androidx.compose.ui:ui-tooling-android:1.11.1] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\20176c3481589f055abbbabd6169edd7\transformed\ui-tooling\AndroidManifest.xml:23:9-25:39
+108            android:name="androidx.compose.ui.tooling.PreviewActivity"
+108-->[androidx.compose.ui:ui-tooling-android:1.11.1] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\20176c3481589f055abbbabd6169edd7\transformed\ui-tooling\AndroidManifest.xml:24:13-71
+109            android:exported="true" />
+109-->[androidx.compose.ui:ui-tooling-android:1.11.1] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\20176c3481589f055abbbabd6169edd7\transformed\ui-tooling\AndroidManifest.xml:25:13-36
+110
+111        <service
+111-->[com.google.firebase:firebase-database-ktx:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\c8e0e708cf4f5c0265f1908b687e5479\transformed\firebase-database-ktx-21.0.0\AndroidManifest.xml:9:9-15:19
+112            android:name="com.google.firebase.components.ComponentDiscoveryService"
+112-->[com.google.firebase:firebase-database-ktx:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\c8e0e708cf4f5c0265f1908b687e5479\transformed\firebase-database-ktx-21.0.0\AndroidManifest.xml:10:13-84
+113            android:directBootAware="true"
+113-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b09d2ff67a87d680871da80cf4e32b7c\transformed\firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+114            android:exported="false" >
+114-->[com.google.firebase:firebase-database-ktx:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\c8e0e708cf4f5c0265f1908b687e5479\transformed\firebase-database-ktx-21.0.0\AndroidManifest.xml:11:13-37
+115            <meta-data
+115-->[com.google.firebase:firebase-database-ktx:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\c8e0e708cf4f5c0265f1908b687e5479\transformed\firebase-database-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+116                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseLegacyRegistrar"
+116-->[com.google.firebase:firebase-database-ktx:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\c8e0e708cf4f5c0265f1908b687e5479\transformed\firebase-database-ktx-21.0.0\AndroidManifest.xml:13:17-127
+117                android:value="com.google.firebase.components.ComponentRegistrar" />
+117-->[com.google.firebase:firebase-database-ktx:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\c8e0e708cf4f5c0265f1908b687e5479\transformed\firebase-database-ktx-21.0.0\AndroidManifest.xml:14:17-82
+118            <meta-data
+118-->[com.google.firebase:firebase-database:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\0a4ec9b482ae53150b8c0388cf986484\transformed\firebase-database-21.0.0\AndroidManifest.xml:29:13-31:85
+119                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
+119-->[com.google.firebase:firebase-database:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\0a4ec9b482ae53150b8c0388cf986484\transformed\firebase-database-21.0.0\AndroidManifest.xml:30:17-120
+120                android:value="com.google.firebase.components.ComponentRegistrar" />
+120-->[com.google.firebase:firebase-database:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\0a4ec9b482ae53150b8c0388cf986484\transformed\firebase-database-21.0.0\AndroidManifest.xml:31:17-82
+121            <meta-data
+121-->[com.google.firebase:firebase-database:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\0a4ec9b482ae53150b8c0388cf986484\transformed\firebase-database-21.0.0\AndroidManifest.xml:32:13-34:85
+122                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+122-->[com.google.firebase:firebase-database:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\0a4ec9b482ae53150b8c0388cf986484\transformed\firebase-database-21.0.0\AndroidManifest.xml:33:17-109
+123                android:value="com.google.firebase.components.ComponentRegistrar" />
+123-->[com.google.firebase:firebase-database:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\0a4ec9b482ae53150b8c0388cf986484\transformed\firebase-database-21.0.0\AndroidManifest.xml:34:17-82
+124            <meta-data
+124-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\c7187f506d89be7ada2be035d37fe791\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+125                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+125-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\c7187f506d89be7ada2be035d37fe791\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+126                android:value="com.google.firebase.components.ComponentRegistrar" />
+126-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\c7187f506d89be7ada2be035d37fe791\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+127            <meta-data
+127-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b09d2ff67a87d680871da80cf4e32b7c\transformed\firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+128                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+128-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b09d2ff67a87d680871da80cf4e32b7c\transformed\firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+129                android:value="com.google.firebase.components.ComponentRegistrar" />
+129-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b09d2ff67a87d680871da80cf4e32b7c\transformed\firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+130        </service>
+131
+132        <activity
+132-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\5a2a392ff2ceea4ec5af6a865a61169a\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+133            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+133-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\5a2a392ff2ceea4ec5af6a865a61169a\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+134            android:exported="false"
+134-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\5a2a392ff2ceea4ec5af6a865a61169a\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+135            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+135-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\5a2a392ff2ceea4ec5af6a865a61169a\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+136
+137        <uses-library
+137-->[androidx.window:window:1.5.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\fdf874d67398cc163dc40d4ce7f05509\transformed\window-1.5.0\AndroidManifest.xml:23:9-25:40
+138            android:name="androidx.window.extensions"
+138-->[androidx.window:window:1.5.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\fdf874d67398cc163dc40d4ce7f05509\transformed\window-1.5.0\AndroidManifest.xml:24:13-54
+139            android:required="false" />
+139-->[androidx.window:window:1.5.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\fdf874d67398cc163dc40d4ce7f05509\transformed\window-1.5.0\AndroidManifest.xml:25:13-37
+140        <uses-library
+140-->[androidx.window:window:1.5.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\fdf874d67398cc163dc40d4ce7f05509\transformed\window-1.5.0\AndroidManifest.xml:26:9-28:40
+141            android:name="androidx.window.sidecar"
+141-->[androidx.window:window:1.5.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\fdf874d67398cc163dc40d4ce7f05509\transformed\window-1.5.0\AndroidManifest.xml:27:13-51
+142            android:required="false" />
+142-->[androidx.window:window:1.5.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\fdf874d67398cc163dc40d4ce7f05509\transformed\window-1.5.0\AndroidManifest.xml:28:13-37
+143
+144        <activity
+144-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\576dbc3a306354430d68ec4fe8911d54\transformed\app-1.7.0\AndroidManifest.xml:31:9-34:75
+145            android:name="androidx.car.app.CarAppPermissionActivity"
+145-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\576dbc3a306354430d68ec4fe8911d54\transformed\app-1.7.0\AndroidManifest.xml:32:13-69
+146            android:exported="false"
+146-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\576dbc3a306354430d68ec4fe8911d54\transformed\app-1.7.0\AndroidManifest.xml:33:13-37
+147            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+147-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\576dbc3a306354430d68ec4fe8911d54\transformed\app-1.7.0\AndroidManifest.xml:34:13-72
+148
+149        <receiver
+149-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\576dbc3a306354430d68ec4fe8911d54\transformed\app-1.7.0\AndroidManifest.xml:36:9-38:40
+150            android:name="androidx.car.app.notification.CarAppNotificationBroadcastReceiver"
+150-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\576dbc3a306354430d68ec4fe8911d54\transformed\app-1.7.0\AndroidManifest.xml:37:13-93
+151            android:exported="false" />
+151-->[androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\576dbc3a306354430d68ec4fe8911d54\transformed\app-1.7.0\AndroidManifest.xml:38:13-37
+152
+153        <provider
+153-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b460a4bb9f07119d2c9bdc2fd660ca9a\transformed\emoji2-1.4.0\AndroidManifest.xml:24:9-32:20
+154            android:name="androidx.startup.InitializationProvider"
+154-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b460a4bb9f07119d2c9bdc2fd660ca9a\transformed\emoji2-1.4.0\AndroidManifest.xml:25:13-67
+155            android:authorities="com.carplay.androidx-startup"
+155-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b460a4bb9f07119d2c9bdc2fd660ca9a\transformed\emoji2-1.4.0\AndroidManifest.xml:26:13-68
+156            android:exported="false" >
+156-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b460a4bb9f07119d2c9bdc2fd660ca9a\transformed\emoji2-1.4.0\AndroidManifest.xml:27:13-37
+157            <meta-data
+157-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b460a4bb9f07119d2c9bdc2fd660ca9a\transformed\emoji2-1.4.0\AndroidManifest.xml:29:13-31:52
+158                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+158-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b460a4bb9f07119d2c9bdc2fd660ca9a\transformed\emoji2-1.4.0\AndroidManifest.xml:30:17-75
+159                android:value="androidx.startup" />
+159-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b460a4bb9f07119d2c9bdc2fd660ca9a\transformed\emoji2-1.4.0\AndroidManifest.xml:31:17-49
+160            <meta-data
+160-->[androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\4df1901c5dd00a6ad61ae2c8404cf9cb\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:29:13-31:52
+161                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+161-->[androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\4df1901c5dd00a6ad61ae2c8404cf9cb\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:30:17-78
+162                android:value="androidx.startup" />
+162-->[androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\4df1901c5dd00a6ad61ae2c8404cf9cb\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:31:17-49
+163            <meta-data
+163-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+164                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+164-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+165                android:value="androidx.startup" />
+165-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+166        </provider>
+167        <provider
+167-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b09d2ff67a87d680871da80cf4e32b7c\transformed\firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+168            android:name="com.google.firebase.provider.FirebaseInitProvider"
+168-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b09d2ff67a87d680871da80cf4e32b7c\transformed\firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+169            android:authorities="com.carplay.firebaseinitprovider"
+169-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b09d2ff67a87d680871da80cf4e32b7c\transformed\firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+170            android:directBootAware="true"
+170-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b09d2ff67a87d680871da80cf4e32b7c\transformed\firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+171            android:exported="false"
+171-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b09d2ff67a87d680871da80cf4e32b7c\transformed\firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+172            android:initOrder="100" />
+172-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b09d2ff67a87d680871da80cf4e32b7c\transformed\firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+173
+174        <meta-data
+174-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\2d774b23a38a5ae7e5d54f258385b582\transformed\play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+175            android:name="com.google.android.gms.version"
+175-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\2d774b23a38a5ae7e5d54f258385b582\transformed\play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+176            android:value="@integer/google_play_services_version" />
+176-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\2d774b23a38a5ae7e5d54f258385b582\transformed\play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+177
+178        <receiver
+178-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+179            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+179-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+180            android:directBootAware="false"
+180-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+181            android:enabled="true"
+181-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+182            android:exported="true"
+182-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+183            android:permission="android.permission.DUMP" >
+183-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+184            <intent-filter>
+184-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+185                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+185-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+185-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+186            </intent-filter>
+187            <intent-filter>
+187-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+188                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+188-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+188-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+189            </intent-filter>
+190            <intent-filter>
+190-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+191                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+191-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+191-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+192            </intent-filter>
+193            <intent-filter>
+193-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+194                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+194-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+194-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+195            </intent-filter>
+196        </receiver>
+197    </application>
+198
+199</manifest>

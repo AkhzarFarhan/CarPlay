@@ -16,6 +16,7 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -48,7 +49,8 @@ data class FeatureItem(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DashboardScreen(
-    onNavigateToAutoAudio: () -> Unit
+    onNavigateToAutoAudio: () -> Unit,
+    onNavigateToObd: () -> Unit
 ) {
     val features = remember {
         listOf(
@@ -57,6 +59,12 @@ fun DashboardScreen(
                 subtitle = "Play audio on car connect",
                 icon = Icons.Filled.PlayArrow,
                 onClick = onNavigateToAutoAudio
+            ),
+            FeatureItem(
+                title = "OBD-II",
+                subtitle = "Scan vehicle diagnostics",
+                icon = Icons.Filled.Search,
+                onClick = onNavigateToObd
             )
             // Future features: add new FeatureItem entries here
         )

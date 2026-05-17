@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -62,6 +63,13 @@ dependencies {
 
     // Storage
     implementation(libs.datastore.preferences)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.database)
+    implementation("com.google.firebase:firebase-database-ktx") // Added ktx for await()
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services") // for await()
+
+    // Utilities
+    implementation(libs.accompanist.permissions)
 
     // Car
     implementation(libs.car.app)

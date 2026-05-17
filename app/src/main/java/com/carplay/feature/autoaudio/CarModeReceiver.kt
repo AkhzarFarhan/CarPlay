@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.util.Log
+import com.carplay.CarPlayApplication
 
 /**
  * Fallback receiver for car mode detection and ZLink connection events.
@@ -16,31 +17,39 @@ class CarModeReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         val action = intent.action ?: return
-        Log.d(TAG, "Received broadcast: $action")
+        val app = context.applicationContext as CarPlayApplication
+        val diag = app.diagnosticsRepository
+        
+        // Log EVERYTHING for debugging
+        val extras = intent.extras?.let { bundle ->
+            bundle.keySet().joinToString { key -> "$key=${bundle.get(key)}" }
+        } ?: "no extras"
+        diag.log("Broadcast", "Action: $action | Extras: $extras")
 
         val shouldStart = when (action) {
             UiModeManager.ACTION_ENTER_CAR_MODE -> {
-                Log.d(TAG, "Standard Car Mode entered")
+                diag.log("Trigger", "Standard Car Mode detected")
                 true
             }
-            "com.zlink.status.CHANGE", "com.zlink5.status.CHANGE" -> {
+            "com.zlink.status.CHANGE", "com.zlink5.status.CHANGE", "com.zholit.zlink.STATUS_CHANGED" -> {
                 val status = intent.getIntExtra("status", -1)
-                Log.d(TAG, "ZLink status changed: $status")
-                // Status 2 is typically "Connected" for Android Auto in ZLink
-                status == 2
+                val linkState = intent.getIntExtra("link_state", -1)
+                diag.log("Trigger", "ZLink status: $status | link_state: $linkState")
+                // Status 2 or linkState 3 usually means "Connected"
+                status == 2 || linkState == 3
             }
-            "com.suding.speedplay.receive" -> {
-                // Older ZLink/TLink versions use command/msg extras
+            "com.suding.speedplay.receive", "com.zjinnova.zlink" -> {
                 val command = intent.getIntExtra("command", -1)
-                Log.d(TAG, "Speedplay command received: $command")
-                // command 1: Main interface open, 3: AA connected
+                diag.log("Trigger", "Speedplay command: $command")
                 command == 1 || command == 3
             }
             else -> false
         }
 
         if (shouldStart) {
-            Log.d(TAG, "Trigger criteria met — starting AudioPlayerService")
+            diag.log("Trigger", "Starting AudioPlayerService")
+            app.autoAudioStatusRepository.updateStatus(AudioStatus.CONNECTING)
+
             val serviceIntent = Intent(context, AudioPlayerService::class.java)
             context.startForegroundService(serviceIntent)
         }

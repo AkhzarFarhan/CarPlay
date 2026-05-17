@@ -1,48 +1,52 @@
 com.carplay.app-pngs-0 C:\GitHub\CarPlay\app\build\generated\res\pngs\debug
-com.carplay.app-resValues-1 C:\GitHub\CarPlay\app\build\generated\res\resValues\debug
-com.carplay.app-packageDebugResources-2 C:\GitHub\CarPlay\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.carplay.app-packageDebugResources-3 C:\GitHub\CarPlay\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.carplay.app-debug-4 C:\GitHub\CarPlay\app\build\intermediates\merged_res\debug\mergeDebugResources
-com.carplay.app-debug-5 C:\GitHub\CarPlay\app\src\debug\res
-com.carplay.app-main-6 C:\GitHub\CarPlay\app\src\main\res
-com.carplay.app-ui-7 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\105e88ef88efd5f3e620b977664eef13\transformed\ui\res
-com.carplay.app-lifecycle-viewmodel-release-8 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\1e30e2e5386a2ea837336cfa77322ed8\transformed\lifecycle-viewmodel-release\res
-com.carplay.app-runtime-saveable-9 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\1edc3a3b1a7e0a0041353975d4cc2aec\transformed\runtime-saveable\res
-com.carplay.app-lifecycle-livedata-core-ktx-2.9.4-10 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3118b528e39aaf1bd9fcfb13c92c1328\transformed\lifecycle-livedata-core-ktx-2.9.4\res
-com.carplay.app-profileinstaller-1.4.0-11 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3314996f1d779ae696312f085ec53d51\transformed\profileinstaller-1.4.0\res
-com.carplay.app-graphics-path-1.0.1-12 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\377b236ff39e15143ca00160fb2787a6\transformed\graphics-path-1.0.1\res
-com.carplay.app-lifecycle-runtime-compose-release-13 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3c2c377d6026e5b3f6cd2e62d59472f0\transformed\lifecycle-runtime-compose-release\res
-com.carplay.app-transition-1.6.0-14 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\42f6de64425d5ec39ec7211ac9d50876\transformed\transition-1.6.0\res
-com.carplay.app-core-viewtree-1.0.0-15 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\43e739f205480187c6feae06d8e1b773\transformed\core-viewtree-1.0.0\res
-com.carplay.app-tracing-1.2.0-16 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\4923b689a388d0a3681fd0a9478cf5d1\transformed\tracing-1.2.0\res
-com.carplay.app-lifecycle-viewmodel-ktx-2.9.4-17 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\55fa35a7354b4f30c0ba982abaff085e\transformed\lifecycle-viewmodel-ktx-2.9.4\res
-com.carplay.app-savedstate-ktx-1.3.2-18 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\68870006aff70233fcd065467129b60b\transformed\savedstate-ktx-1.3.2\res
-com.carplay.app-emoji2-1.4.0-19 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\68e498512b08b84dcb14820e79b61f1f\transformed\emoji2-1.4.0\res
-com.carplay.app-ui-graphics-20 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\695c56a103e5952c2422d69b4b499022\transformed\ui-graphics\res
-com.carplay.app-ui-text-21 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\6d28820ff1794a6b05ad92a42f515d4d\transformed\ui-text\res
-com.carplay.app-activity-ktx-1.10.1-22 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\6f40b6616d2e22245afa82218d1b2921\transformed\activity-ktx-1.10.1\res
-com.carplay.app-window-1.5.0-23 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\6f659fe54c8387e222a37cc12469ef3b\transformed\window-1.5.0\res
-com.carplay.app-navigation-common-release-24 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\808e7d49e9b3aed2a93336a44e1b8aaf\transformed\navigation-common-release\res
-com.carplay.app-lifecycle-livedata-2.9.4-25 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\84b221dc959c9c4f4b092540f0cfed05\transformed\lifecycle-livedata-2.9.4\res
-com.carplay.app-lifecycle-livedata-core-2.9.4-26 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\84eeb4dab02e7d90598d6381a2c589a1\transformed\lifecycle-livedata-core-2.9.4\res
-com.carplay.app-core-ktx-1.16.0-27 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\8a29f64a1cdca96555e6a21964c88270\transformed\core-ktx-1.16.0\res
-com.carplay.app-navigation-compose-release-28 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\90079d2365a26187839727a65c619c6b\transformed\navigation-compose-release\res
-com.carplay.app-core-1.16.0-29 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\90d6ce51648f0023e73bfaa8acb52bda\transformed\core-1.16.0\res
-com.carplay.app-activity-compose-1.10.1-30 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\9900e87ef8cf96fd5d33f6fd88f47088\transformed\activity-compose-1.10.1\res
-com.carplay.app-lifecycle-runtime-release-31 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\9cbf6bfb62d611ee217bc81b116aac21\transformed\lifecycle-runtime-release\res
-com.carplay.app-material3-32 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\9f2f280823c12bcbfb19445871293174\transformed\material3\res
-com.carplay.app-lifecycle-viewmodel-savedstate-release-33 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\a2459e13ffc09ca15fe1add140154cde\transformed\lifecycle-viewmodel-savedstate-release\res
-com.carplay.app-annotation-experimental-1.4.1-34 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\a26aee81ddbda90a66e9aecbc4b95ab4\transformed\annotation-experimental-1.4.1\res
-com.carplay.app-lifecycle-process-2.9.4-35 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\ad477600096c856292b172498aee9533\transformed\lifecycle-process-2.9.4\res
-com.carplay.app-ui-tooling-36 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\c1201f97d5e4fc6aa1b4d93a889e615a\transformed\ui-tooling\res
-com.carplay.app-savedstate-release-37 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d06e9e2de9e681fb032acdd08c901b02\transformed\savedstate-release\res
-com.carplay.app-app-1.7.0-38 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\res
-com.carplay.app-navigation-runtime-release-39 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d9eadefe487815b42506c90ba50169e5\transformed\navigation-runtime-release\res
-com.carplay.app-lifecycle-viewmodel-compose-release-40 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d9f984a7414b9f7658191be461cfcb22\transformed\lifecycle-viewmodel-compose-release\res
-com.carplay.app-activity-1.10.1-41 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\de334b680fd90f1c1e6c1f6f6bedb860\transformed\activity-1.10.1\res
-com.carplay.app-customview-poolingcontainer-1.0.0-42 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\de696a54a246044d876d99b470a54d58\transformed\customview-poolingcontainer-1.0.0\res
-com.carplay.app-media-1.6.0-43 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\ed7f108aa2949e0f4f4103a9e19b80c0\transformed\media-1.6.0\res
-com.carplay.app-startup-runtime-1.1.1-44 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\f03ac0f2bb5ff43d8adccc1b51a6ec77\transformed\startup-runtime-1.1.1\res
-com.carplay.app-foundation-45 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\f1fcaa1c246b020d369182333d6003e2\transformed\foundation\res
-com.carplay.app-material-icons-core-release-46 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\f5823a27f3f9e84e3ad1d6f7efa87dbb\transformed\material-icons-core-release\res
-com.carplay.app-core-runtime-2.2.0-47 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\fff3f6c2d021c52092781469d40a8dc0\transformed\core-runtime-2.2.0\res
+com.carplay.app-res-1 C:\GitHub\CarPlay\app\build\generated\res\processDebugGoogleServices
+com.carplay.app-resValues-2 C:\GitHub\CarPlay\app\build\generated\res\resValues\debug
+com.carplay.app-packageDebugResources-3 C:\GitHub\CarPlay\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.carplay.app-packageDebugResources-4 C:\GitHub\CarPlay\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.carplay.app-debug-5 C:\GitHub\CarPlay\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.carplay.app-debug-6 C:\GitHub\CarPlay\app\src\debug\res
+com.carplay.app-main-7 C:\GitHub\CarPlay\app\src\main\res
+com.carplay.app-lifecycle-runtime-release-8 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\011fc18599d4720b383eb1598805be0d\transformed\lifecycle-runtime-release\res
+com.carplay.app-activity-1.10.1-9 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\0edb732b19eb9b06a0765b7ca8c431a0\transformed\activity-1.10.1\res
+com.carplay.app-transition-1.6.0-10 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\0f2e05116da0ae32d3035600efd09e82\transformed\transition-1.6.0\res
+com.carplay.app-lifecycle-runtime-compose-release-11 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\111d10b199bfa0522ce7c3e2a2b0862f\transformed\lifecycle-runtime-compose-release\res
+com.carplay.app-navigation-runtime-release-12 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\1177c9650a3cb9c84129e53a804a8447\transformed\navigation-runtime-release\res
+com.carplay.app-core-viewtree-1.0.0-13 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\136e38f4d827cc08024c75c4fb36912a\transformed\core-viewtree-1.0.0\res
+com.carplay.app-lifecycle-viewmodel-ktx-2.9.4-14 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\1c9c86b9ca7395b688e9a60c08539eee\transformed\lifecycle-viewmodel-ktx-2.9.4\res
+com.carplay.app-ui-tooling-15 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\20176c3481589f055abbbabd6169edd7\transformed\ui-tooling\res
+com.carplay.app-annotation-experimental-1.4.1-16 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\26d71fbc4efb5067a9871ecbd70a5bf5\transformed\annotation-experimental-1.4.1\res
+com.carplay.app-graphics-path-1.0.1-17 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\26f2171f080a2ea3df4c47c5bb2dd1fb\transformed\graphics-path-1.0.1\res
+com.carplay.app-core-runtime-2.2.0-18 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\29036af5c6b2a9ed26e682a966d7b15d\transformed\core-runtime-2.2.0\res
+com.carplay.app-play-services-basement-18.3.0-19 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\2d774b23a38a5ae7e5d54f258385b582\transformed\play-services-basement-18.3.0\res
+com.carplay.app-lifecycle-livedata-2.9.4-20 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\319008e9385bf4d0972e1368f90e4bbc\transformed\lifecycle-livedata-2.9.4\res
+com.carplay.app-lifecycle-viewmodel-release-21 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3972474cbb493a0451a48b9740a3d1c9\transformed\lifecycle-viewmodel-release\res
+com.carplay.app-navigation-common-release-22 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\3ede38aa5adfc8807cc82db19e0d326a\transformed\navigation-common-release\res
+com.carplay.app-activity-compose-1.10.1-23 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\42e19bad0d90aea0a55eed2711d6ca6b\transformed\activity-compose-1.10.1\res
+com.carplay.app-material-icons-core-release-24 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\448d71c40f421cde13c5370d3124fa0f\transformed\material-icons-core-release\res
+com.carplay.app-navigation-compose-release-25 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\44c6f0d3bec12496f0f2eb716d6e67d8\transformed\navigation-compose-release\res
+com.carplay.app-lifecycle-viewmodel-savedstate-release-26 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\4857820f2fef0e849c88051cc863a94d\transformed\lifecycle-viewmodel-savedstate-release\res
+com.carplay.app-ui-graphics-27 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\4bdbe12ad66394341a90af718654bbb3\transformed\ui-graphics\res
+com.carplay.app-lifecycle-process-2.9.4-28 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\4df1901c5dd00a6ad61ae2c8404cf9cb\transformed\lifecycle-process-2.9.4\res
+com.carplay.app-activity-ktx-1.10.1-29 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\50d00b16957292b673460b7d1d97cd2c\transformed\activity-ktx-1.10.1\res
+com.carplay.app-lifecycle-viewmodel-compose-release-30 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\50e84f2633e2073d3c337ada516e9a56\transformed\lifecycle-viewmodel-compose-release\res
+com.carplay.app-customview-poolingcontainer-1.0.0-31 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\562ee48335051b1c10144778db235ca5\transformed\customview-poolingcontainer-1.0.0\res
+com.carplay.app-app-1.7.0-32 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\576dbc3a306354430d68ec4fe8911d54\transformed\app-1.7.0\res
+com.carplay.app-play-services-base-18.1.0-33 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\5a2a392ff2ceea4ec5af6a865a61169a\transformed\play-services-base-18.1.0\res
+com.carplay.app-ui-34 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\5aa20b6f7423e233c9f54f3dabc7a5e7\transformed\ui\res
+com.carplay.app-startup-runtime-1.1.1-35 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\7585dad1f152307358450fd37b3159f5\transformed\startup-runtime-1.1.1\res
+com.carplay.app-profileinstaller-1.4.0-36 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\77fc228a256ffd0da34c0edb30312cd6\transformed\profileinstaller-1.4.0\res
+com.carplay.app-lifecycle-livedata-core-2.9.4-37 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\78e8b764763124dd08dbcaddaef3a806\transformed\lifecycle-livedata-core-2.9.4\res
+com.carplay.app-savedstate-release-38 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\7cc70bd8143e04b31560329c72976f79\transformed\savedstate-release\res
+com.carplay.app-core-ktx-1.16.0-39 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\7d2878062b2ab46ff6c070b604f33255\transformed\core-ktx-1.16.0\res
+com.carplay.app-savedstate-ktx-1.3.2-40 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\817ee3ffd4ce16b3e021df604519c41a\transformed\savedstate-ktx-1.3.2\res
+com.carplay.app-foundation-41 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\9255d36821fa6da9e44f17b76ae0e184\transformed\foundation\res
+com.carplay.app-firebase-common-21.0.0-42 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b09d2ff67a87d680871da80cf4e32b7c\transformed\firebase-common-21.0.0\res
+com.carplay.app-emoji2-1.4.0-43 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\b460a4bb9f07119d2c9bdc2fd660ca9a\transformed\emoji2-1.4.0\res
+com.carplay.app-media-1.6.0-44 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\ba7baa5bc0b60df6539e17fd3ab6b21b\transformed\media-1.6.0\res
+com.carplay.app-lifecycle-livedata-core-ktx-2.9.4-45 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\bb1a46573994d30e19cb2e46838db170\transformed\lifecycle-livedata-core-ktx-2.9.4\res
+com.carplay.app-core-1.16.0-46 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d26b391081962bb40c0ce41cf990e63c\transformed\core-1.16.0\res
+com.carplay.app-tracing-1.2.0-47 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\e02bd040c43774aabf8e0de772897cc0\transformed\tracing-1.2.0\res
+com.carplay.app-runtime-saveable-48 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\eb8cc9879e3b1647485a783dd1fa324c\transformed\runtime-saveable\res
+com.carplay.app-ui-text-49 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\fc069e481e679ec4d9a0d241e1050f78\transformed\ui-text\res
+com.carplay.app-window-1.5.0-50 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\fdf874d67398cc163dc40d4ce7f05509\transformed\window-1.5.0\res
+com.carplay.app-material3-51 C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\ff8071f0b5a0247e2888435c0b0109b4\transformed\material3\res

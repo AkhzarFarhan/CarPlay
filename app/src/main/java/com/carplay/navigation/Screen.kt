@@ -7,4 +7,5 @@ package com.carplay.navigation
 sealed class Screen(val route: String) {
     data object Dashboard : Screen("dashboard")
     data object AutoAudio : Screen("auto_audio")
+    data object ObdDiagnostics : Screen("obd_diagnostics")
 }

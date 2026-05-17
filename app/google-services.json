@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "829161965482",
+    "firebase_url": "https://my-own-ubiverse-default-rtdb.firebaseio.com",
+    "project_id": "my-own-ubiverse",
+    "storage_bucket": "my-own-ubiverse.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829161965482:android:1f9f82cb56e03ef5268dd3",
+        "android_client_info": {
+          "package_name": "com.carplay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829161965482-cu13gpqof9479gtvn5692rklv38g5u1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR8NlMDX0HuSB_TUpt5O_3Ded7vYKwiU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829161965482-97odbu90tj5rjsl4qim69o5c2q5ps11p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
