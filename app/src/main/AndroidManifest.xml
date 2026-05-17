@@ -32,12 +32,15 @@
             android:foregroundServiceType="mediaPlayback"
             android:exported="false" />
 
-        <!-- Car Mode Detection (fallback for non-projection car docks) -->
+        <!-- Car Mode Detection and ZLink Connection Events -->
         <receiver
             android:name=".feature.autoaudio.CarModeReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.app.action.ENTER_CAR_MODE" />
+                <action android:name="com.zlink.status.CHANGE" />
+                <action android:name="com.zlink5.status.CHANGE" />
+                <action android:name="com.suding.speedplay.receive" />
             </intent-filter>
         </receiver>
 

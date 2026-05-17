@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:2:1-46:12
+ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:2:1-49:12
 MERGED from [androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\AndroidManifest.xml:17:1-41:12
 MERGED from [androidx.navigation:navigation-runtime-android:2.9.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d9eadefe487815b42506c90ba50169e5\transformed\navigation-runtime-release\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-android:2.9.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\808e7d49e9b3aed2a93336a44e1b8aaf\transformed\navigation-common-release\AndroidManifest.xml:17:1-22:12
@@ -95,8 +95,8 @@ ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:9:5-77
 	android:name
 		ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:9:22-74
 application
-ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:11:5-44:19
-INJECTED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:11:5-44:19
+ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:11:5-47:19
+INJECTED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:11:5-47:19
 MERGED from [androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\AndroidManifest.xml:30:5-39:19
 MERGED from [androidx.car.app:app:1.7.0] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\d101173e16b6277e9824cd337ec9a297\transformed\app-1.7.0\AndroidManifest.xml:30:5-39:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.11.1] C:\Users\Akhzar Farhan\.gradle\caches\8.12\transforms\c1201f97d5e4fc6aa1b4d93a889e615a\transformed\ui-tooling\AndroidManifest.xml:22:5-26:19
@@ -158,17 +158,29 @@ ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:30:9-33:40
 	android:name
 		ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:31:13-65
 receiver#com.carplay.feature.autoaudio.CarModeReceiver
-ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:36:9-42:20
+ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:36:9-45:20
 	android:exported
 		ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:38:13-36
 	android:name
 		ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:37:13-62
-intent-filter#action:name:android.app.action.ENTER_CAR_MODE
-ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:39:13-41:29
+intent-filter#action:name:android.app.action.ENTER_CAR_MODE+action:name:com.suding.speedplay.receive+action:name:com.zlink.status.CHANGE+action:name:com.zlink5.status.CHANGE
+ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:39:13-44:29
 action#android.app.action.ENTER_CAR_MODE
 ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:40:17-76
 	android:name
 		ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:40:25-73
+action#com.zlink.status.CHANGE
+ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:41:17-66
+	android:name
+		ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:41:25-63
+action#com.zlink5.status.CHANGE
+ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:42:17-67
+	android:name
+		ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:42:25-64
+action#com.suding.speedplay.receive
+ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:43:17-71
+	android:name
+		ADDED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml:43:25-68
 uses-sdk
 INJECTED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\GitHub\CarPlay\app\src\main\AndroidManifest.xml
